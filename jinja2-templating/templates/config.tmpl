@@ -1,0 +1,17 @@
+!
+hostname {{ HOSTNAME }}
+!
+interface Loopback0
+ ipv4 address {{ LOOPBACK_IPV4 }}/32
+ ipv6 address {{ LOOPBACK_IPV6 }}/128
+!
+{%- for INTERFACE in range( NUM_INTERFACES|int ) %}
+interface Ethernet{{ INTERFACE }}
+ description UNUSED
+ switchport mode trunk
+ switchport trunk allow vlan 42-90
+!
+{%- endfor %}
+end
+
+
