@@ -1,0 +1,9 @@
+{%  from "library.j2" import render_interface %}
+
+# Here are our interfaces
+{%- for interface in data.interfaces %}
+!
+{{ render_interface(interface) }}
+{%- endfor %}
+!
+# and now we're done

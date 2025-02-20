@@ -1,0 +1,7 @@
+# Macro Library
+
+{% macro render_interface(interface) -%}
+interface {{ interface.name }}
+    ip address {{ interface.ip }}
+{%- endmacro %}
+
